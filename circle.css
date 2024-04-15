@@ -45,7 +45,10 @@
   text-shadow: 0 0 10px #0005;
   animation-name: fade-in;
   opacity: 1;
-  animation-timeline: view(80vh 0vh);
+  animation-timeline: view(80vh 0vh);  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .pie {
