@@ -1,0 +1,135 @@
+.circle {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+
+.circle-content {
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.circle-content .stat-sub-heading {
+  width: 100%;
+}
+
+.circle-container {
+  position: relative;
+}
+
+.circle-content>p {
+  width: calc(60% - 4rem);
+  align-self: center;
+  background-color: white;
+  color: #0e2e62;
+  margin: auto;
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  font-size: small;
+}
+
+.circle-container p.stat {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  align-self: center;
+  font-size: 2.5rem;
+  z-index: 6;
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-shadow: 0 0 10px #0005;
+  animation-name: fade-in;
+  opacity: 1;
+  animation-timeline: view(80vh 0vh);
+}
+
+.pie {
+  width: 125px;
+  height: 125px;
+  background: conic-gradient(#f6fbfc 0% 85%, #fff0 85% 100%);
+  margin: 10px;
+  border-radius: 50%;
+  position: relative;
+  animation-name: fade-pie-1;
+}
+
+.pie::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  scale: .8;
+  background: #0e2e62;
+  z-index: 1;
+  border-radius: inherit;
+  transition: all .5s ease-in-out;
+  animation-name: grow-3;
+  transform-origin: center;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-timeline: view(70vh -10vh);
+}
+
+.pie::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  scale: .8;
+  background: #18a3a5;
+  box-shadow: 0 0 2px 4px #0002;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+@keyframes grow-3 {
+  from {
+    scale: 1;
+
+  }
+
+  to {
+    scale: .8;
+
+  }
+}
+
+@keyframes fade-in {
+
+  from {
+    opacity: 0;
+
+  }
+
+  to {
+    opacity: 1;
+
+  }
+}
+
+@keyframes fade-pie-1 {
+  from {
+    opacity: 0;
+    scale: .2;
+    background-color: #f6fbfc;
+    rotate: 360deg;
+
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+    background-color: transparent;
+    rotate: 0deg;
+
+  }
+}
